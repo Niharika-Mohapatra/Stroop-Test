@@ -27,6 +27,9 @@
       align-self: center;
       margin: 30px;
   }
+  #word {
+    color: blue;
+  }
 </style>
   
 <body>
@@ -34,7 +37,8 @@
   <h1>Welcome to the Stroop Test</h1>
   <p>You will see words displayed in different colors. Click the button that matches the color of the word, NOT the word itself!</p>
   <p>Respond as quickly and accurately as possible. Your reaction times will be recorded for analysis. Complete all 20 trials before stopping.</p>
-
+  
+  <p>E.g, For <span id="word">RED</span> you would select "blue", not "red".</p>
   <button onclick="window.location.href='/test'">Start Test</button>
 
 </body>
