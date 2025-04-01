@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from config import Config
 import os
+import csv
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -41,10 +42,19 @@ def submit():
     db.session.commit()
     return jsonify({"message": "Data saved!"}), 201
 
+results = StroopResult.query.all()
+
 @app.route("/data")
 def get_data():
-    results = StroopResult.query.all()
     return render_template("data.html", results=results)
+
+@app.route("/export_data")
+def export_data():
+    def generate():
+        yield "word,color,response,reaction_time,is_correct\n"
+        for result in results:
+            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
+        return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  
