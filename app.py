@@ -31,14 +31,12 @@ def test():
 @app.route("/submit", methods=["POST"])
 def submit():
     data = request.json
-    timestamp = datetime.utcfromtimestamp(data["timestamp"] / 1000)
     new_result = StroopResult(
         word=data["word"],
         color=data["color"],
         response=data["response"],
         reaction_time=data["reaction_time"],
-        is_correct=data["response"] == data["color"],
-        timestamp=timestamp
+        is_correct=data["response"] == data["color"]
     )
     db.session.add(new_result)
     db.session.commit()

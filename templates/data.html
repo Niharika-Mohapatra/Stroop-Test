@@ -31,7 +31,7 @@
             <td>{{ result.response }}</td>
             <td>{{ result.reaction_time }}</td>
             <td>{{ '✔' if result.is_correct else '✘' }}</td>
-            <td>{{ result.timestamp }}</td>
+            <td>{{ result.timestamp.strftime('%b %d, %Y %I:%M %p') }}</td>
         </tr>
         {% endfor %}
     </table>
