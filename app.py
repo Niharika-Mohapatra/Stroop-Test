@@ -37,19 +37,14 @@ def submit():
         reaction_time=data["reaction_time"],
         is_correct=data["response"] == data["color"]
     )
-    with app.app_context():
-        db.session.add(new_result)
-        db.session.commit()
+    db.session.add(new_result)
+    db.session.commit()
     return jsonify({"message": "Data saved!"}), 201
 
 @app.route("/data")
 def get_data():
     results = StroopResult.query.all()
-    """return jsonify([{
-        "word": r.word, "color": r.color, "response": r.response,
-        "reaction_time": r.reaction_time, "is_correct": r.is_correct,
-        "timestamp": r.timestamp
-    } for r in results])"""
+    print(results)
     return render_template("data.html", results=results)
 
 if __name__ == '__main__':
