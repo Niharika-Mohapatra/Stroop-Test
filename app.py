@@ -49,12 +49,17 @@ def get_data():
 
 @app.route("/export_data")
 def export_data():
-    results = StroopResult.query.all()
+    from flask import Response
+
+@app.route("/export_data")
+def export_data():
     def generate():
-        yield "word,color,response,reaction_time,is_correct, timestamp\n"
-        for result in results:
-            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}, {result.timestamp}\n"
+        yield "word,color,response,reaction_time,is_correct\n"
+        for result in StroopResult.query.yield_per(100):  
+            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
+    
     return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  
