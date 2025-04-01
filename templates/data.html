@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Stroop Test Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Stroop Test Results</h2>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Color</th>
+            <th>Response</th>
+            <th>Reaction Time</th>
+            <th>Is Correct?</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.word }}</td>
+            <td>{{ result.color }}</td>
+            <td>{{ result.response }}</td>
+            <td>{{ result.reaction_time }}</td>
+            <td>{{ '✔' if result.is_correct else '✘' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

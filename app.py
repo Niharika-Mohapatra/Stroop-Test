@@ -50,7 +50,7 @@ def get_data():
         "reaction_time": r.reaction_time, "is_correct": r.is_correct,
         "timestamp": r.timestamp
     } for r in results])"""
-    return render_template("view_data.html", results=results)
+    return render_template("data.html", results=results)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  
