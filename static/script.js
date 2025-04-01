@@ -44,7 +44,8 @@ function handleResponse(userResponse) {
             color: currentColor,
             response: userResponse,
             reaction_time: reactionTime,
-            is_correct: userResponse === currentColor 
+            is_correct: userResponse === currentColor,
+            timestamp: Date.now()    
         })
     }).then(response => response.json())
       .catch(error => console.error("Error:", error));
