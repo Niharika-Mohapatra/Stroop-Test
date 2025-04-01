@@ -44,7 +44,6 @@ def submit():
 @app.route("/data")
 def get_data():
     results = StroopResult.query.all()
-    print(results)
     return render_template("data.html", results=results)
 
 if __name__ == '__main__':
