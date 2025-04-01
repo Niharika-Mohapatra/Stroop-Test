@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <title>Stroop Test</title>
+  <script defer src="static/script.js"></script>
+</head>
+
+<style>
+  body {
+    background-color: #a9a9a9;
+    color: 3f3f3f;
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+  p {
+      font-size: 25px;
+      margin: 1px;
+}
+  h2 {
+       font-size: 32px;
+}
+  #buttons {
+      display: flex;
+      flex-direction: column; 
+      align-self: center;
+}
+  button {
+    width: 200px; 
+    padding: 10px 16px; 
+    font-size: 20px;
+    display: block; 
+}
+  #word {
+      font-size: 32px;
+      margin: 15px;
+  }
+</style>
+  
+<body>
+
+  <h1>Stroop Test</h1>
+  <p>Click the colour of the word, NOT the word itself.</p>
+
+  <div id="word"></div>
+  
+  <div id="buttons"> 
+    <button onclick="handleResponse('red')">Red</button>
+    <button onclick="handleResponse('blue')">Blue</button>
+    <button onclick="handleResponse('green')">Green</button>
+    <button onclick="handleResponse('yellow')">Yellow</button>
+  </div>
+
+</body>
+
+</html>
+  
+  
