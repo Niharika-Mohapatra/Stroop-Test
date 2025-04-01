@@ -2,12 +2,12 @@ from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from config import Config
-from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db = SQLAlchemy()
-db.init_app(app)
+
+db = SQLAlchemy(app)
 
 class StroopResult(db.Model):
     __tablename__ = "stroop_result"
@@ -18,7 +18,6 @@ class StroopResult(db.Model):
     reaction_time = db.Column(db.Float, nullable=False)
     is_correct = db.Column(db.Boolean, nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-
 
 @app.route("/")
 def index():
@@ -38,20 +37,23 @@ def submit():
         reaction_time=data["reaction_time"],
         is_correct=data["response"] == data["color"]
     )
-    db.session.add(new_result)
-    db.session.commit()
+    with app.app_context():
+        db.session.add(new_result)
+        db.session.commit()
     return jsonify({"message": "Data saved!"}), 201
 
 @app.route("/data")
 def get_data():
     results = StroopResult.query.all()
     return jsonify([{
-        "word": r.word, "color":r.color, "response": r.response,
+        "word": r.word, "color": r.color, "response": r.response,
         "reaction_time": r.reaction_time, "is_correct": r.is_correct
     } for r in results])
-        
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  
+    app.run(host="0.0.0.0", port=port, debug=True)  
+
 
 
 
