@@ -47,9 +47,6 @@ def get_data():
     results = StroopResult.query.all()
     return render_template("data.html", results=results)
 
-@app.route("/export_data")
-def export_data():
-    from flask import Response
 
 @app.route("/export_data")
 def export_data():
