@@ -9,7 +9,6 @@ app.config.from_object(Config)
 
 db = SQLAlchemy(app)
 
-
 class StroopResult(db.Model):
     __tablename__ = "stroop_result"
     id = db.Column(db.Integer, primary_key=True)
@@ -46,11 +45,12 @@ def submit():
 @app.route("/data")
 def get_data():
     results = StroopResult.query.all()
-    return jsonify([{
+    """return jsonify([{
         "word": r.word, "color": r.color, "response": r.response,
         "reaction_time": r.reaction_time, "is_correct": r.is_correct,
         "timestamp": r.timestamp
-    } for r in results])
+    } for r in results])"""
+    return render_template("view_data.html", results=results)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  
