@@ -22,6 +22,7 @@
             <th>Response</th>
             <th>Reaction Time</th>
             <th>Is Correct?</th>
+            <th>Timestamp</th>
         </tr>
         {% for result in results %}
         <tr>
@@ -30,6 +31,7 @@
             <td>{{ result.response }}</td>
             <td>{{ result.reaction_time }}</td>
             <td>{{ '✔' if result.is_correct else '✘' }}</td>
+            <td>{{ result.timestamp }}</td>
         </tr>
         {% endfor %}
     </table>

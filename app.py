@@ -31,12 +31,14 @@ def test():
 @app.route("/submit", methods=["POST"])
 def submit():
     data = request.json
+    timestamp = datetime.utcfromtimestamp(data["timestamp"] / 1000)
     new_result = StroopResult(
         word=data["word"],
         color=data["color"],
         response=data["response"],
         reaction_time=data["reaction_time"],
-        is_correct=data["response"] == data["color"]
+        is_correct=data["response"] == data["color"],
+        timestamp=timestamp
     )
     db.session.add(new_result)
     db.session.commit()
@@ -51,9 +53,9 @@ def get_data():
 def export_data():
     results = StroopResult.query.all()
     def generate():
-        yield "word,color,response,reaction_time,is_correct\n"
+        yield "word,color,response,reaction_time,is_correct, timestamp\n"
         for result in results:
-            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
+            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}, {result.timestamp}\n"
     return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
 
 if __name__ == '__main__':
