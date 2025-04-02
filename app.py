@@ -51,12 +51,13 @@ def get_data():
 
 @app.route("/export_data")
 def export_data():
-    def generate():
-        yield "word,color,response,reaction_time,is_correct\n"
-        for result in StroopResult.query.yield_per(100):  
-            yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
+    with app.app_context():
+        def generate():
+            yield "word,color,response,reaction_time,is_correct\n"
+            for result in StroopResult.query.yield_per(100):
+                yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
     
-    return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
+        return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
 
 
 @app.route("/clear_db", methods=["GET","POST"])
