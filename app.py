@@ -59,7 +59,8 @@ def generate_dataframe():
                 "color": r.color,
                 "response": r.response,
                 "reaction_time": r.reaction_time,
-                "is_correct": r.is_correct
+                "is_correct": r.is_correct, 
+                "time": r.timestamp
             }
             for r in results
         ])
