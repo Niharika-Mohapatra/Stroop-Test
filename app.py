@@ -5,6 +5,7 @@ from datetime import datetime
 from config import Config
 import os
 import csv
+import pandas as pd
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -60,6 +61,25 @@ def export_data():
                 yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
     
     return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})"""
+
+@app.route("/generate_dataframe")
+def generate_dataframe():
+    with app.app_context():
+        results = StroopResult.query.all()
+        df = pd.DataFrame([
+            {
+                "word": r.word,
+                "color": r.color,
+                "response": r.response,
+                "reaction_time": r.reaction_time,
+                "is_correct": r.is_correct
+            }
+            for r in results
+        ])
+    
+    csv_data = df.to_csv(index=False)
+    
+    return Response(csv_data, mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
 
 @app.route("/clear_db", methods=["GET","POST"])
 def clear_db():
