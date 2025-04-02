@@ -60,7 +60,7 @@ def generate_dataframe():
                 "response": r.response,
                 "reaction_time": r.reaction_time,
                 "is_correct": r.is_correct, 
-                "time": r.timestamp
+                "time": r.timestamp.strftime('%b %d, %Y %I:%M %p')
             }
             for r in results
         ])
