@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request, Response
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
 from datetime import datetime
 from config import Config
 import os
@@ -56,6 +57,14 @@ def export_data():
             yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
     
     return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
+
+
+@app.route("/clear_db", methods=["GET","POST"])
+def clear_db():
+    with app.app_context():
+        db.session.execute(text("DELETE FROM stroop_result;"))
+        db.session.commit()
+    return "Database cleared!"
 
 
 if __name__ == '__main__':
