@@ -49,19 +49,6 @@ def get_data():
     results = StroopResult.query.all()
     return render_template("data.html", results=results)
 
-"""@app.route("/export_data")
-def export_data():
-    results = StroopResult.query.yield_per(100)
-    if not results:
-        return "No data available", 204 
-
-    def generate():
-            yield "word,color,response,reaction_time,is_correct\n"
-            for result in results:
-                yield f"{result.word},{result.color},{result.response},{result.reaction_time},{result.is_correct}\n"
-    
-    return Response(generate(), mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})"""
-
 @app.route("/generate_dataframe")
 def generate_dataframe():
     with app.app_context():
@@ -77,7 +64,7 @@ def generate_dataframe():
             for r in results
         ])
     
-    csv_data = df.to_csv(index=False)
+    csv_data = df.to_csv(index=True)
     
     return Response(csv_data, mimetype="text/csv", headers={"Content-Disposition": "attachment; filename=stroop_results.csv"})
 
