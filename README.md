@@ -14,3 +14,5 @@ Congruent: word and ink colour match (e.g., “Red” in red ink)
 Incongruent: word and ink colour mismatch (e.g., “Blue” in green ink)
 
 They were asked to identify the colour of the ink, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects.
+
+**To view the test:** https://stroop-test.onrender.com
