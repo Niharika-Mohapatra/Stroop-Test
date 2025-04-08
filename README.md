@@ -9,8 +9,8 @@ In its most common example, it is observed that participants in a **Stroop test*
 ## Overview
 Participants were shown words naming colors, either:
 
-Congruent: word and ink color match (e.g., “Red” in red ink)
+Congruent: word and ink colour match (e.g., “Red” in red ink)
 
-Incongruent: word and ink color mismatch (e.g., “Blue” in green ink)
+Incongruent: word and ink colour mismatch (e.g., “Blue” in green ink)
 
-They were asked to identify the color of the ink, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects.
+They were asked to identify the colour of the ink, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects.
