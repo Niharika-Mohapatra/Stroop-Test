@@ -4,10 +4,10 @@ This project analyzes data from a Stroop test, a classic cognitive psychology ex
 ##What is the Stroop effect?
 The Stroop effect is a psychological phenomenon that demonstrates the interference between automatic and controlled processes in the brain.
 
-In its most common example, it is observed that participants in a **Stroop test** take longer to name the color of ink in which a word is printed, when the color of the ink and the word itself are incongruent.
+In its most common example, it is observed that participants in a **Stroop test** take longer to name the colour of ink in which a word is printed, when the colour of the ink and the word itself are incongruent.
 
 ## Overview
-Participants were shown words naming colors, either:
+Participants were shown words naming colours, either:
 
 Congruent: word and ink colour match (e.g., “Red” in red ink)
 
