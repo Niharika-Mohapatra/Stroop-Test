@@ -21,9 +21,9 @@ They were asked to identify the colour of the ink, not read the word. The reacti
 pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 
 ## Contents
-* stroop_analysis.ipynb: Main notebook with complete analysis and visualizations
+* **stroop_analysis.ipynb**: Main notebook with complete analysis and visualizations
 
-* stroop_results_final.csv: Folder containing participant-level trial data
+* **stroop_results_final.csv**: Folder containing participant-level trial data
 
-* README.md: Project overview and methodology
+* **README.md**: Project overview and methodology
 
