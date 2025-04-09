@@ -23,7 +23,7 @@ pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 ## Contents
 * stroop_analysis.ipynb: Main notebook with complete analysis and visualizations
 
-* data/: Folder containing participant-level trial data
+* stroop_results_final.csv: Folder containing participant-level trial data
 
 * README.md: Project overview and methodology
 
