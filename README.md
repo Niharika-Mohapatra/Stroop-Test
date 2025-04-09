@@ -27,3 +27,28 @@ pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 
 * **README.md**: Project overview and methodology
 
+# Conclusion
+
+This project explored the classic Stroop effect, analyzing how stimulus **congruency**, **accuracy**, and **reaction time** interact in a cognitive interference task. Key findings include:
+
+* Participants responded significantly faster to congruent stimuli compared to incongruent ones, confirming the expected Stroop interference.
+
+![](images/congruency_boxplot_participant.png)
+![](images/congruency_boxplot_trial.png)
+
+* A speed-accuracy tradeoff was observed, with faster responses tending to be less accurate. However, this effect was not especially prominent in this data set.
+
+![](images/accuracy_boxplot_participant.png)
+![](images/accuracy_boxplot_trial.png)
+
+* Incorrect-congruent trials had the fastest reaction times, while correct-incongruent trials were the slowest, highlighting the cognitive cost of resolving interference accurately.
+
+![](images/heatmap.png)
+
+* Reaction time did not show any particular trend of increasing or decreasing over trials. However, accuracy did improve over trials, suggesting possible learning or increased task familiarity.
+
+* The color–response heatmap revealed patterns of confusion, which may inform how certain colors or words introduce greater cognitive conflict.
+
+![](images/colours_heatmap.png)
+
+Together, these insights reinforce how automatic processing (reading) competes with controlled processing (color naming), making the Stroop task a powerful tool for studying attention and cognitive control.
