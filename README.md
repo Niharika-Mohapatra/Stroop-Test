@@ -16,3 +16,14 @@ Incongruent: word and ink colour mismatch (e.g., “Blue” in green ink)
 They were asked to identify the colour of the ink, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects.
 
 **To view the test:** https://stroop-test.onrender.com
+
+## Tools and Libraries:
+pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
+
+## Contents
+* stroop_analysis.ipynb: Main notebook with complete analysis and visualizations
+
+* data/: Folder containing participant-level trial data
+
+* README.md: Project overview and methodology
+
