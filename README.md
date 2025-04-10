@@ -29,7 +29,7 @@ pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 
 * **README.md**: Project overview and methodology
 
-# Conclusion
+## Conclusion
 
 This project explored the Stroop effect, analyzing how stimulus **congruency**, **accuracy**, and **reaction time** interact in a cognitive interference task. Key findings include:
 
