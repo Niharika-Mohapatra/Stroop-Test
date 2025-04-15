@@ -23,7 +23,7 @@ Data analysis was done on both a trial and participant level, as participant IDs
 pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 
 ## Contents
-* **Stroop Test Notebook.ipynb**: Main notebook with complete analysis and visualizations
+* **Stroop Test Notebook.ipynb**: Main Jupyter notebook with complete analysis and visualizations
 
 * **stroop_results_final.csv**: Folder containing participant-level trial data
 
