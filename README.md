@@ -33,7 +33,7 @@ pandas, numpy, matplotlib, seaborn, scipy.stats and sklearn
 
 This project explored the Stroop effect, analyzing how stimulus **congruency**, **accuracy**, and **reaction time** interact in a cognitive interference task. Key findings include:
 
-* Participants responded significantly faster to congruent stimuli compared to incongruent ones, confirming the expected Stroop interference. This was proven by both paired and unpaired t-test. 
+* Participants responded significantly faster to congruent stimuli compared to incongruent ones, confirming the expected Stroop interference. This was proven by both paired t-test and Wilcoxon test. 
 
 ![](images/congruency_boxplot_participant.png)
 ![](images/congruency_boxplot_trial.png)
