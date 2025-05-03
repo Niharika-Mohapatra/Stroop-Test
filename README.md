@@ -9,11 +9,11 @@ In its most common example, it is observed that participants in a **Stroop test*
 ## Overview
 Participants were shown words naming colours, either:
 
-Congruent: word and ink colour match (e.g., “Red” in red ink)
+Congruent: word and font colour match (e.g., “Red” in red font)
 
-Incongruent: word and ink colour mismatch (e.g., “Blue” in green ink)
+Incongruent: word and font colour mismatch (e.g., “Blue” in green font)
 
-They were asked to identify the colour of the ink, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects. Each participant was requested to complete 20 trials. 
+They were asked to identify the colour of the font, not read the word. The reaction times for each trial were recorded and analyzed to measure interference effects. Each participant was requested to complete 20 trials. 
 
 Data analysis was done on both a trial and participant level, as participant IDs were not originally recorded. I divided the dataset into groups of 20 trials respectively. This does limit the accuracy of the experiment as it relies on the every participant completing 20 trials and the data being perfectly chronological.
 
